@@ -1,0 +1,105 @@
+[project]
+name = "llms-full"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ryan-minato", email = "82735346+ryan-minato@users.noreply.github.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp>=3.2.3",
+    "filelock>=3.25.2",
+    "fsspec>=2026.3.0",
+    "llama-index>=0.14.20",
+    "llama-index-embeddings-fastembed>=0.6.0",
+    "llama-index-readers-file>=0.6.0",
+    "llama-index-retrievers-bm25>=0.7.1",
+    "llama-index-sparse-embeddings-fastembed>=0.4.0",
+    "llama-index-vector-stores-chroma>=0.5.5",
+    "omegaconf>=2.3.0",
+    "platformdirs>=4.9.6",
+    "pydantic>=2.12.5",
+    "rich>=14.3.3",
+    "typer>=0.24.1",
+    "universal-pathlib>=0.3.10",
+]
+
+[project.scripts]
+llms-full = "llms_full:main"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "pytest-mock>=3.15.1",
+    "ruff>=0.15.10",
+    "ty>=0.0.29",
+    "zensical>=0.0.32",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.6,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.ty.src]
+include = ["src", "tests"]
+exclude = [
+    ".agents",
+    # NOTE: remove if you don't have scripts directory
+    "scripts",
+    # NOTE: remove if you don't have notebooks directory
+    "notebooks",
+]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = [
+    ".agents",
+    # Example: Ignore gRPC generated files
+    # "*_pb2.py",
+    # "*_pb2_grpc.py",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 80
+
+[tool.ruff.lint]
+extend-select = [
+    "E",    # pycodestyle error: PEP 8 styling errors
+    "I",    # isort: Import sorting
+    "N",    # pep8-naming: Check PEP 8 naming conventions
+    "S",    # flake8-bandit: Security testing
+    "T10",  # flake8-debugger: Check for debugger imports and set_trace calls
+    "T20",  # flake8-print: Check for print statements
+    "TID",  # flake8-tidy-imports: Tidy up imports
+    "UP",   # pyupgrade: Upgrade syntax for newer Python versions
+    "W",    # pycodestyle warning: PEP 8 styling warnings
+]
+# ignore = [
+#     "S105", # hardcoded-password-string: Check for hardcoded passwords in strings
+#     "S106", # hardcoded-password-func-arg: Check for hardcoded passwords in function arguments
+#     "S107", # hardcoded-password-default: Check for hardcoded passwords in default arguments
+# ]
+unfixable = [
+    "F401", # unused-import: Unused import
+]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/**/*" = [
+    "T201",     # print: print found
+]
+"tests/**/*" = [
+    "S",        # flake8-bandit: Security testing
+    "TID252",   # relative-imports: Relative imports ban
+]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
