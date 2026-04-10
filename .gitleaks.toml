@@ -47,6 +47,7 @@ regexes = [
 paths = [
     # Some semantic version may look like an IP, e.g. 0.1.0
     '''^uv\.lock$''',
+    '''^requirements\.txt$''',
     '''^pyproject\.toml$''',
     # Exclude this config file
     '''\.gitleaks\.toml'''

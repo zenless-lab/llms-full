@@ -7,7 +7,23 @@ authors = [
     { name = "ryan-minato", email = "82735346+ryan-minato@users.noreply.github.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "fastmcp>=3.2.3",
+    "filelock>=3.25.2",
+    "fsspec>=2026.3.0",
+    "llama-index>=0.14.20",
+    "llama-index-embeddings-fastembed>=0.6.0",
+    "llama-index-readers-file>=0.6.0",
+    "llama-index-retrievers-bm25>=0.7.1",
+    "llama-index-sparse-embeddings-fastembed>=0.4.0",
+    "llama-index-vector-stores-chroma>=0.5.5",
+    "omegaconf>=2.3.0",
+    "platformdirs>=4.9.6",
+    "pydantic>=2.12.5",
+    "rich>=14.3.3",
+    "typer>=0.24.1",
+    "universal-pathlib>=0.3.10",
+]
 
 [project.scripts]
 llms-full = "llms_full:main"
