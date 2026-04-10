@@ -1,0 +1,154 @@
+[project]
+
+# Site title shown in header and browser tab.
+site_name = "Documentation"
+
+# Short description for HTML head/search engines.
+site_description = "A new project generated from the default template project."
+
+# Site author in HTML head metadata.
+site_author = "<your name here>"
+
+# Canonical URL for published docs.
+#site_url = "https://www.example.com/"
+
+# Footer copyright (HTML allowed).
+copyright = """
+Copyright &copy; 2026 The authors
+"""
+
+# Optional explicit navigation.
+# nav = [
+#   { "Get started" = "index.md" },
+#   { "Markdown in 5min" = "markdown.md" },
+# ]
+
+# Additional CSS files (relative to docs_dir).
+#extra_css = ["stylesheets/extra.css"]
+
+# Additional JavaScript files (relative to docs_dir).
+#extra_javascript = ["javascripts/extra.js"]
+
+# Theme options.
+[project.theme]
+
+# Use classic variant instead of default style.
+#variant = "classic"
+
+# Template overrides directory.
+#custom_dir = "overrides"
+
+# Favicon path (relative to docs_dir).
+#favicon = "images/favicon.png"
+
+# UI language code.
+language = "en"
+
+# Feature toggles.
+features = [
+    # Dismissible announcement bar.
+    "announce.dismiss",
+
+    # Show an "edit page" action when repository is configured.
+    #"content.action.edit",
+
+    # Show a "view source" action when repository is configured.
+    #"content.action.view",
+
+    # Tooltip annotations inside code blocks.
+    "content.code.annotate",
+
+    # Copy button for code blocks.
+    "content.code.copy",
+
+    # Line-range selection in code blocks.
+    "content.code.select",
+
+    # Render footnotes as inline tooltips.
+    "content.footnote.tooltips",
+
+    # Sync tabs with same labels across pages.
+    "content.tabs.link",
+
+    # Enhanced link tooltips.
+    "content.tooltips",
+
+    # Auto-hide header on scroll.
+    # "header.autohide",
+
+    # Expand all nav sections by default.
+    # "navigation.expand",
+
+    # Previous/next page links in footer.
+    "navigation.footer",
+
+    # Enable section index pages.
+    "navigation.indexes",
+
+    # Instant client-side navigation.
+    "navigation.instant",
+
+    # Prefetch pages on link hover.
+    "navigation.instant.prefetch",
+
+    # Progress indicator during instant navigation.
+    #"navigation.instant.progress",
+
+    # Breadcrumbs above page title.
+    "navigation.path",
+
+    # Render only visible nav items.
+    #"navigation.prune",
+
+    # Group top-level sections in desktop sidebar.
+    "navigation.sections",
+
+    # Render top-level sections as header tabs.
+    #"navigation.tabs",
+
+    # Keep tabs sticky below header.
+    #"navigation.tabs.sticky",
+
+    # Show back-to-top button.
+    "navigation.top",
+
+    # Update URL with active heading anchor.
+    "navigation.tracking",
+
+    # Highlight matched text after search navigation.
+    "search.highlight",
+
+    # Auto-scroll TOC to active anchor.
+    # "toc.follow",
+
+    # Integrate TOC into left navigation.
+    #"toc.integrate",
+]
+
+# Project logo path (relative to docs_dir).
+#logo = "assets/logo.png"
+
+# Built-in icon logo (used when logo is not set).
+#[project.theme.icon]
+#logo = "lucide/smile"
+
+# Theme fonts.
+#[project.theme.font]
+#text = "Inter"
+#code = "Jetbrains Mono"
+
+# Color palettes with light/dark toggle labels.
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+# Misc extra settings.
+#[[project.extra.social]]
+#icon = "fontawesome/brands/github"
+#link = "https://github.com/user/repo"
